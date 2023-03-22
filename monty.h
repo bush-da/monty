@@ -21,9 +21,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 
@@ -37,10 +37,20 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct bus_s - properties of each opcode
+ * @arg: the arguement of the opcode, if any.
+ * @file: input stream
+ * @content: the opcode
+ * @lifi: flag to determine stack or queue
+ *
+ * Description: properties of each opcode
+ * to map each instruction
+ */
 typedef struct bus_s
 {
 	char *arg;
