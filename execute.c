@@ -12,6 +12,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	instruction_t op[] = {
 		{"push", f_push},
 		{"pall", f_pall},
+		{"pop", f_pop},
 		{NULL, NULL}
 	};
 
