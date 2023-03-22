@@ -4,7 +4,6 @@
 void f_pop(stack_t **head, unsigned int counter)
 {
 	stack_t *temp;
-	(void)counter;
 
 	if (*head)
 	{
@@ -17,5 +16,12 @@ void f_pop(stack_t **head, unsigned int counter)
 		}
 		else
 			*head = NULL;
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", counter);
+		free(bus.content);
+		fclose(bus.file);
+		exit(EXIT_FAILURE);
 	}
 }
