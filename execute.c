@@ -1,5 +1,4 @@
 #include "monty.h"
-
 /**
  * execute - executes the opcode
  * @content: line content
@@ -8,17 +7,20 @@
  * @file: pointer to monty file
  * Return: void
  */
-
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t op[] = {
 		{"push", f_push}, {"pall", f_pall}, {"pop", f_pop},
-		{"pint", f_pint}, {"swap", f_swap}, {"add", f_add},
-		{"nop", f_nop}, {"sub", f_sub}, {"mul", f_mul},
-		{"pchar", f_pchar}, {"pstr", f_pstr},
+		{"pint", f_pint},
+		{"swap", f_swap},
+		{"add", f_add},
+		{"nop", f_nop},
+		{"sub", f_sub},
+		{"mul", f_mul},
+		{"pchar", f_pchar},
+		{"pstr", f_pstr},
 		{NULL, NULL}
 	};
-
 	unsigned int i = 0;
 	char *opcode;
 
@@ -26,7 +28,6 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 
 	if (opcode && opcode[0] == '#')
 		return (0);
-
 	bus.arg = strtok(NULL, " \n\t");
 	while (op[i].opcode && opcode)
 	{
