@@ -2,16 +2,16 @@
 
 /**
  * execute - executes the opcode
+ * @number: line number
  * @content: line content
- * @counter: line_counter
  * @stack: linked list
- * @file: pointer to monty file
+ * @file: pointer to the monty file
  * Return: void
  */
 
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
+int execute(char *content, stack_t **stack, unsigned int number, FILE *file)
 {
-	instruction_t opt[] = {
+	instruction_t opst = {
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 		{"pop", f_pop},
 		{"swap", f_swap},
@@ -26,6 +26,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"rotl", f_rotl},
 		{NULL, NULL}
 	};
+
 	unsigned int i = 0;
 	char *op;
 
@@ -33,16 +34,16 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	if (op && op[0] == '#')
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
-	while (opt[i].opcode && op)
+	while (opst[i].opcode && op)
 	{
-		if (strcmp(op, opt[i].opcode) == 0)
+		if (strcmp(op, opst[i].opcode) == 0)
 		{
-			opt[i].f(stack, counter);
+			opst[i].f(stack, counter);
 			return (0);
 		}
 		i++;
 	}
-	if (op && opt[i].opcode == NULL)
+	if (op && opst[i].opcode == NULL)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
@@ -50,6 +51,5 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-
 	return (1);
 }
