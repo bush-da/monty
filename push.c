@@ -33,7 +33,7 @@ void f_push(stack_t **head, unsigned int number)
 
 		if (bus.arg[0] == '-')
 			j++;
-		while(bus.arg[j] != '\0')
+		while (bus.arg[j] != '\0')
 		{
 			if (bus.arg[j] > 57 || bus.arg[j] < 48)
 				flag = 1;
