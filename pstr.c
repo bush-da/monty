@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * p_str - prints a string
+ * f_pstr - prints a string
  * @head: head node
  * @number: line number
  * Return: void
