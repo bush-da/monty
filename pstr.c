@@ -10,6 +10,7 @@
 void f_pstr(stack_t **head, unsigned int number)
 {
 	stack_t *temp;
+	(void)number;
 
 	temp = *head;
 	while (temp)
