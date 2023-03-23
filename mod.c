@@ -38,6 +38,6 @@ void f_mod(stack_t **head, unsigned int number)
 	mod = temp->next->n % temp->n;
 	temp->next->n = mod;
 	*head = temp->next;
-	*head->prev = NULL;
+	(*head)->prev = NULL;
 	free(temp);
 }
