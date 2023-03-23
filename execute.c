@@ -17,8 +17,6 @@ void address_error(stack_t **stack, int counter, char *opcode)
 	exit(EXIT_FAILURE);
 }
 
-
-
 /**
  * execute - executes the opcode
  * @content: line content
