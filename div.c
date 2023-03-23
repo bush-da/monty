@@ -1,11 +1,16 @@
 #include "monty.h"
+<<<<<<< HEAD
 ​
+=======
+
+>>>>>>> 406340b10aa2e592c4028fa44a349c4829829f7a
 /**
  * f_div - divide the first two elements form the stack
  * @head: head node
  * @number: line number
  * Return: void
  */
+<<<<<<< HEAD
 void f_div(stack_t **head, unsigned int number)
 {
 
@@ -13,6 +18,14 @@ void f_div(stack_t **head, unsigned int number)
 	
 	int len = 0, div;
 	
+=======
+
+void f_div(stack_t **head, unsigned int number)
+{
+	stack_t *temp;
+	int len = 0, div;
+
+>>>>>>> 406340b10aa2e592c4028fa44a349c4829829f7a
 	temp = *head;
 	while (temp)
 	{
