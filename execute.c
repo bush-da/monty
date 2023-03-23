@@ -19,6 +19,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"nop", f_nop},
 		{"sub", f_sub},
 		{"mul", f_mul},
+		{"pchar", f_pchar},
 		{NULL, NULL}
 	};
 
