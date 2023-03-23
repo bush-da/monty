@@ -63,7 +63,7 @@ typedef struct bus_s
 
 extern bus_t bus;
 
-int execute(char *content, stack_t **stack, unsigned int counter, FILE *file);
+int execute(char *content, stack_t **stack, unsigned int number, FILE *file);
 void f_push(stack_t **head, unsigned int number);
 void f_pall(stack_t **head, unsigned int number);
 void addnode(stack_t **head, int n);
