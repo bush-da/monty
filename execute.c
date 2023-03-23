@@ -11,7 +11,7 @@
 
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
-	instruction_t op[] = {
+	instruction_t opt[] = {
 		{"push", f_push}, {"pall", f_pall}, {"pint", f_pint},
 		{"pop", f_pop},
 		{"swap", f_swap},
@@ -27,24 +27,24 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{NULL, NULL}
 	};
 	unsigned int i = 0;
-	char *opcode;
+	char *op;
 
-	opcode = strtok(content, " \n\t");
-	if (opcode && opcode[0] == '#')
+	op = strtok(content, " \n\t");
+	if (op && op[0] == '#')
 		return (0);
 	bus.arg = strtok(NULL, " \n\t");
-	while (op[i].opcode && opcode)
+	while (opt[i].opcode && op)
 	{
-		if (strcmp(opcode, op[i].opcode) == 0)
+		if (strcmp(op, opt[i].opcode) == 0)
 		{
-			op[i].f(stack, counter);
+			opt[i].f(stack, counter);
 			return (0);
 		}
 		i++;
 	}
-	if (opcode && op[i].opcode == NULL)
+	if (op && opt[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
+		fprintf(stderr, "L%d: unknown instruction %s\n", counter, op);
 		fclose(file);
 		free(content);
 		free_stack(*stack);
