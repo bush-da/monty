@@ -5,6 +5,7 @@
  * @content: line content
  * @counter: line_counter
  * @file: pointer to monty file
+ * Return: void
  */
 
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
@@ -13,6 +14,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"push", f_push},
 		{"pall", f_pall},
 		{"pop", f_pop},
+		{"pint", f_pint},
 		{NULL, NULL}
 	};
 
@@ -22,6 +24,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 
 	if (opcode && opcode[0] == '#')
 		return (0);
+
 	bus.arg = strtok(NULL, " \n\t");
 	while (op[i].opcode && opcode)
 	{
