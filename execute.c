@@ -1,4 +1,5 @@
 #include "monty.h"
+
 /**
  * execute - executes the opcode
  * @content: line content
@@ -7,6 +8,7 @@
  * @file: pointer to monty file
  * Return: void
  */
+
 int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 {
 	instruction_t op[] = {
@@ -17,7 +19,6 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 		{"mul", f_mul},
 		{"pchar", f_pchar},
 		{"pstr", f_pstr},
-		{"div", f_div},
 		{"mod", f_mod},
 		{NULL, NULL}
 	};
