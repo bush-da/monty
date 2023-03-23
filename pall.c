@@ -7,10 +7,10 @@
  * @number: the line of the instruction
  */
 
-void f_pall(stack_t **head, unsigned int number)
+void f_pall(stack_t **head, unsigned int counter)
 {
 	stack_t *temp;
-	(void)number;
+	(void)counter;
 
 	temp = *head;
 
