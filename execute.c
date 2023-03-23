@@ -1,6 +1,25 @@
 #include "monty.h"
 
 /**
+ * address_error - print error message in stderr
+ * @stack: linked list structure
+ * @counter: number that error occured
+ * @opcode: operation code
+ * Return: void
+ */
+
+void address_error(stack_t **stack, int counter, char *opcode)
+{
+	fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
+	fclose(bus.file);
+	free(bus.content);
+	free_stack(*stack);
+	exit(EXIT_FAILURE);
+}
+
+
+
+/**
  * execute - executes the opcode
  * @content: line content
  * @counter: line_counter
@@ -44,11 +63,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 	}
 	if (opcode && op[i].opcode == NULL)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", counter, opcode);
-		fclose(file);
-		free(content);
-		free_stack(*stack);
-		exit(EXIT_FAILURE);
+		address_error(stack, counter, opcode);
 	}
 
 	return (1);
