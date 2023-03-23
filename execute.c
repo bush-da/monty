@@ -4,6 +4,7 @@
  * execute - executes the opcode
  * @content: line content
  * @counter: line_counter
+ * @stack: linked list
  * @file: pointer to monty file
  * Return: void
  */
@@ -23,6 +24,7 @@ int execute(char *content, stack_t **stack, unsigned int counter, FILE *file)
 
 	unsigned int i = 0;
 	char *opcode;
+
 	opcode = strtok(content, " \t\n");
 
 	if (opcode && opcode[0] == '#')
