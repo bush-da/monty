@@ -28,9 +28,8 @@ void f_mul(stack_t **head, unsigned int number)
 		exit(EXIT_FAILURE);
 	}
 	temp = *head;
-
-	mul = temp->n * temp->next->n;
+	mul = temp->next->n * temp->n;
 	temp->next->n = mul;
-	(*head) = temp->next;
+	*head = temp->next;
 	free(temp);
 }
