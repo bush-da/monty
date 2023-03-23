@@ -1,5 +1,11 @@
 #include "monty.h"
 
+/**
+ * f_pop - function that delete the first node or last node incase of queue
+ * @head: head node
+ * @counter: line number
+ * Return: void
+ */
 
 void f_pop(stack_t **head, unsigned int counter)
 {
