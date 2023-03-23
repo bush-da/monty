@@ -14,7 +14,7 @@ void f_add(stack_t **head, unsigned int number)
 	int sum;
 
 	temp = *head;
-	while(temp)
+	while (temp)
 	{
 		temp = temp->next;
 		len++;
