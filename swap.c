@@ -3,7 +3,7 @@
 /**
  * f_swap - swap the top two elements of the stack
  * @head: head node
- * @counter: line number
+ * @number: line number
  * Return: void
  */
 
