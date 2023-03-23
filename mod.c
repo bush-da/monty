@@ -20,7 +20,7 @@ void f_mod(stack_t **head, unsigned int number)
 	}
 	if (len < 2)
 	{
-		fprintf(stderr, "L%d: can't add, stack too short\n", number);
+		fprintf(stderr, "L%d: can't mod, stack too short\n", number);
 		fclose(bus.file);
 		free(bus.content);
 		free_stack(*head);
