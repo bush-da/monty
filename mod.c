@@ -26,7 +26,8 @@ void f_mod(stack_t **head, unsigned int number)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	if ((*head)->n == 0)
+	temp = *head;
+	if (temp->n == 0)
 	{
 		fprintf(stderr, "L%d: division by zero\n", number);
 		fclose(bus.file);
@@ -34,7 +35,6 @@ void f_mod(stack_t **head, unsigned int number)
 		free_stack(*head);
 		exit(EXIT_FAILURE);
 	}
-	temp = *head;
 	mod = temp->next->n % temp->n;
 	temp->next->n = mod;
 	*head = temp->next;
