@@ -6,6 +6,7 @@
  * @head: the top of stack
  * @number: the line of the instruction
  */
+
 void f_pall(stack_t **head, unsigned int number)
 {
 	stack_t *temp;
@@ -13,7 +14,7 @@ void f_pall(stack_t **head, unsigned int number)
 
 	temp = *head;
 
-	while(temp)
+	while (temp)
 	{
 		printf("%d\n", temp->n);
 		temp = temp->next;
