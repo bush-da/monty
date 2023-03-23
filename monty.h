@@ -19,6 +19,7 @@
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct stack_s
 {
 	int n;
@@ -31,10 +32,10 @@ typedef struct stack_s
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
  * @f: function to handle the opcode
- *
  * Description: opcode and its function
  * for stack, queues, LIFO, FIFO
  */
+
 typedef struct instruction_s
 {
 	char *opcode;
@@ -51,6 +52,7 @@ typedef struct instruction_s
  * Description: properties of each opcode
  * to map each instruction
  */
+
 typedef struct bus_s
 {
 	char *arg;
@@ -72,7 +74,7 @@ void f_nop(stack_t **head, unsigned int counter);
 void free_stack(stack_t *head);
 void f_pint(stack_t **head, unsigned int number);
 void f_pop(stack_t **head, unsigned int counter);
-void f_swap(stack_t **head, unsigned int counter);
-void f_add(stack_t **head, unsigned int counter);
+void f_swap(stack_t **head, unsigned int number);
+void f_add(stack_t **head, unsigned int number);
 
 #endif
