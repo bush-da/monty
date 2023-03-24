@@ -4,17 +4,7 @@ push 3
 push 4
 push 5
 push 6
-#push 7
+push 0
 pall
-add
-	add		push
-			add
-	add 6795
-add
+rotl
 pall
-pop jhljhl
-pal ll
-pop
-pall
-pop
-pall this is the ebdkl;h

@@ -5,14 +5,6 @@
  * @number: line number
  * Return: void
  */
-
-void f_div(stack_t **head, unsigned int number)
-{
-	stack_t *temp;
-	int len = 0, div;
-}
-
-
 void f_div(stack_t **head, unsigned int number)
 {
 	stack_t *temp;
