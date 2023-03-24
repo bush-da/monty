@@ -9,10 +9,9 @@
 
 void f_rotl(stack_t **head, unsigned int number)
 {
-	(void)number;
-	stack_t *temp;
-	stack_t *temp1;
+	stack_t *temp, *temp1;
 
+	(void)number;
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		return;
